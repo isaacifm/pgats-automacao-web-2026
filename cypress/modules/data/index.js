@@ -1,4 +1,4 @@
-/** Gera um usuário único para cada execução */
+
 export const buildUser = () => {
   const id = `${Date.now()}${Cypress._.random(100, 999)}`
   return {

@@ -28,9 +28,8 @@ export const placeOrderAndPay = (comment) => {
   cy.get('[data-qa="cvc"]').type(card.cvc)
   cy.get('[data-qa="expiry-month"]').type(card.month)
   cy.get('[data-qa="expiry-year"]').type(card.year)
-
-  // A mensagem de sucesso só aparece por um instante antes do redirecionamento:
-  // seguramos o primeiro submit para validá-la e depois enviamos o formulário de fato
+  
+  
   cy.get('#payment-form').then(($form) => {
     $form.one('submit', (e) => e.preventDefault())
   })
